@@ -138,3 +138,55 @@ Compartilo con quien creas que pueda aprovecharlo para practicar.
 ---
 
 **¡Divertite programando! 🚀**
+
+
+
+
+# 📋 Guía de Instalación y Configuración
+
+## 📦 Instalación del proyecto
+
+Como el archivo `.gitignore` excluye `node_modules`, no hay problema.
+
+Cuando alguien (o vos mismo) clone este repositorio, simplemente debe ejecutar:
+
+```bash
+npm install
+```
+
+Esto restaurará automáticamente todas las dependencias del proyecto.
+
+---
+
+## 🎨 Compilación de CSS (Tailwind)
+
+Tailwind no genera automáticamente el archivo CSS después de instalar dependencias, por lo que es necesario compilarlo manualmente.
+
+### 🔄 Modo Watch (desarrollo)
+
+Para trabajar en desarrollo y que los cambios se reflejen automáticamente:
+
+```bash
+npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch
+```
+
+Este comando recompila `output.css` y queda escuchando los cambios en tiempo real.
+
+### 🧠 Generar el CSS una sola vez
+
+Para compilar el CSS sin quedarse escuchando cambios:
+
+```bash
+npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css
+```
+
+Este comando genera el archivo sin quedarse mirando cambios.
+
+---
+
+## 🚀 Flujo de trabajo recomendado
+
+1. Clonar el repositorio
+2. Ejecutar `npm install`
+3. Ejecutar el modo watch de Tailwind para desarrollo
+4. ¡Comenzar a desarrollar!
