@@ -4,68 +4,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Componente con resumen de resultados, desarrollado en HTML y Tailwind CSS como práctica de diseño responsivo.">
+<script src="./script.js" defer></script>
   <link href="./src/output.css" rel="stylesheet">
-  <title>Resumen Resultados</title>
+  <title>Resultados del Test | Resumen</title>
 </head>
 
 <body>
-  <main class="flex flex-col gap-8 text-center font-hanken">
-    <section
-      class="bg-linear-to-t from-[#342EEA] to-[#6844FD] py-10 px-14 rounded-b-3xl text-white flex flex-col gap-5 items-center">
-      <h2 class="text-white/60 font-bold text-2xl">Tu Resultado</h2>
-      <div
-        class="w-40 h-40 rounded-full bg-[linear-gradient(to_bottom,#4B24CC_45%,#5B3FE800_100%)] flex flex-col items-center justify-center text-white">
-        <p class="font-extrabold text-7xl">76</p>
-        <span class="font-bold text-white/60 text-xl">de 100</span>
-      </div>
-      <div>
-        <h3 class="font-extrabold text-3xl">Genial</h3>
-        <p class="text-white/60 w-80 mt-5">Obtuviste una puntuación más alta que el 65% de las personas que realizaron
-          estas
-          pruebas.</p>
-      </div>
-    </section>
-
-    <section class="px-8">
-      <h2 class="text-left mb-5 text-2xl font-bold">Resumen</h2>
-      <div class="flex flex-col gap-5">
-        <div class="flex flex-row justify-between p-5 bg-[#f16e7718] rounded-xl text-xl">
-          <div class="flex flex-row gap-3 items-center">
-            <img class="w-7 h-7" src="./assets/images/icon-reaction.svg" alt="icon reaction">
-            <span class="text-[#F16E76] text-xl font-bold">Reacción</span>
-          </div>
-          <p class="font-extrabold">80 <span class="text-black/30 font-bold">/ 100</span></p>
+  <main class="md:min-h-screen md:flex md:items-center md:justify-center md:bg-slate-100">
+    <h1 class="sr-only">Resumen de resultados del test</h1>
+    <article
+      class="md:w-full md:max-w-[750px] flex flex-col md:flex-row gap-8 md:gap-0 text-center font-hanken md:bg-white md:rounded-3xl md:shadow-2xl">
+      <section
+        class="md:w-[45%] md:justify-center bg-linear-to-t from-[#342EEA] to-[#6844FD] py-10 px-14 md:py-8 md:px-8 rounded-b-3xl md:rounded-3xl text-white flex flex-col gap-5 items-center">
+        <h2 class="text-white/60 font-bold text-2xl">Tu Resultado</h2>
+        <div
+          class="w-40 h-40 md:w-28 md:h-28 rounded-full bg-[linear-gradient(to_bottom,#4B24CC_45%,#5B3FE800_100%)] flex flex-col items-center justify-center text-white">
+          <p id="resultado-final"  class="font-extrabold text-7xl md:text-5xl"></p>
+          <span class="font-bold text-white/60 text-xl md:text-sm">de 100</span>
         </div>
-
-        <div class="flex flex-row justify-between p-5 bg-[#F7BA5318] rounded-xl text-xl">
-          <div class="flex flex-row gap-3 items-center">
-            <img class="w-7 h-7" src="./assets/images/icon-memory.svg" alt="icon memory">
-            <span class="text-[#F7BA53] text-xl font-bold"> Memoria</span>
-          </div>
-          <p class="font-extrabold">92 <span class="text-black/30 font-bold">/ 100</span></p>
+        <div>
+          <h3 class="font-extrabold text-3xl">Genial</h3>
+          <p id="texto-resultado" class="text-white/60 w-80 md:w-64 mt-5 md:mt-3 md:text-sm"></p>
         </div>
+      </section>
 
-
-        <div class="flex flex-row justify-between p-5 bg-[#51C3A418] rounded-xl text-xl">
-          <div class="flex flex-row gap-3 items-center">
-            <img class="w-7 h-7" src="./assets/images/icon-verbal.svg" alt="icon memory">
-            <span class="text-[#51C3A4] text-xl font-bold">Verbal</span>
-          </div>
-          <p class="font-extrabold">61 <span class="text-black/30 font-bold">/ 100</span></p>
-        </div>
-
-
-        <div class="flex flex-row justify-between p-5 bg-[#777EE718] rounded-xl text-xl">
-          <div class="flex flex-row gap-3 items-center">
-            <img class="w-7 h-7" src="./assets/images/icon-visual.svg" alt="icon memory">
-            <span class="text-[#777EE7] text-xl font-bold">Visual</span>
-          </div>
-          <p class="font-extrabold">72 <span class="text-black/30 font-bold">/ 100</span></p>
-        </div>
-      </div>
-
-      <button class="w-full h-auto my-8 bg-[#303B59] text-white py-5 rounded-full font-extrabold text-xl"> Continuar</button>
-    </section>
+      <section class="md:w-[55%] px-8 md:justify-center md:py-8 md:px-8">
+        <h2 class="text-left mb-5 md:mb-3 text-2xl font-bold">Resumen</h2>
+        <ul class="flex flex-col gap-5 list-none" id="lista-resultados"></ul>
+        <button aria-label="Continuar al siguiente paso"
+          class="w-full h-auto my-8 md:my-0 md:mt-5 bg-[#303B59] md:hover:bg-[#6276ae] text-white py-5 md:py-3 rounded-full font-extrabold text-xl md:cursor-pointer transition-colors duration-300">
+          Continuar</button>
+      </section>
+    </article>
   </main>
 </body>
 
